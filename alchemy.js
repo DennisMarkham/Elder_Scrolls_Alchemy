@@ -1,3 +1,4 @@
+
 class Ingredient{
 	constructor(effect1, effect2, effect3, effect4){
 		this.effect1 = effect1;
@@ -35,11 +36,28 @@ class Ingredient{
 
 }
 
+
+
 const wheat = new Ingredient("restore health", "invisibility", "resist fire", "resist frost")
 const torchbug_thorax = new Ingredient("damage health", "resist magic", "resist shock", "restore fatigue")
 const frost_mirmain = new Ingredient("resist frost", "restore fatigue", "restore magicka", "resist fire")
 const lavender = new Ingredient("fortify conjuration", "restore health", "restore fatigue", "restore magicka")
 const dwemer_oil = new Ingredient("fortify one-handed", "damage health", "damage fatigue", "restore magicka")
 
+ingArray = [wheat, torchbug_thorax, frost_mirmain, lavender, dwemer_oil];
 
-wheat.mix(lavender);
+
+for (let i = 0; i < ingArray.length; i++) {
+	console.log("for loop firing");
+	//this never fills, that's the problem
+  $("#ing1").append("<option value = '" + i + "'>" + ingArray[i] + "</option>")
+  $("#ing2").append("<option value = '" + i + "'>" + ingArray[i] + "</option>")
+}
+
+
+function mix()
+{
+
+
+ingArray[parseInt(document.getElementById("ing1").value)].mix(ingArray[parseInt(document.getElementById("ing2").value)])
+}
