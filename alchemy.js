@@ -1,7 +1,10 @@
 
 class Ingredient{
+	
 	//assign effects to item
 	constructor(name, effect1, effect2, effect3, effect4){
+		this.effectsArray = [];
+		this.created = false;
 		this.name = name;
 		this.effect1 = effect1;
 		this.effect2 = effect2;
@@ -18,17 +21,27 @@ class Ingredient{
 		{
 			case this.effect1:
 			alert("You created a " + this.effect1 + " potion!");
+			this.created = true;
+			this.effectsArray.push(this.effect1);
 			break;
 			case this.effect2:
 			alert("You created a " + this.effect2 + " potion!");
+			this.created = true;
+			this.effectsArray.push(this.effect2);
 			break;
 			case this.effect3:
 			alert("You created a " + this.effect3 + " potion!");
+			this.created = true;
+			this.effectsArray.push(this.effect3);
 			break;
 			case this.effect4:
 			alert("You created a " + this.effect4 + " potion!");
+			this.created = true;
+			this.effectsArray.push(this.effect4);
 			break;
 		}
+		
+		
 	}
 	//takes a second Ingridient, checks each of its "effect" properties, runs them
 	//through the 'x' method.
@@ -38,6 +51,14 @@ class Ingredient{
 		this.effectMatcher(secondAgent.effect2);
 		this.effectMatcher(secondAgent.effect3);
 		this.effectMatcher(secondAgent.effect4);
+		if(this.created == true)
+		{
+			//why does this create four images?  Each effect that checks creates
+			//a new image node.  That makes no sense
+
+			//also note that oddly only inline styling works
+			$("#inventory").append("<img title = '" + this.effectsArray + "' style = 'width: 100px' src = 'https://w7.pngwing.com/pngs/820/447/png-transparent-the-elder-scrolls-v-skyrim-potion-minecraft-invisibility-elixir-minecraft-dragon-wine-bottle-magic.png' />")
+		}
 	}
 
 
