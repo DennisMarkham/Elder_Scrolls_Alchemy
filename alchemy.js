@@ -47,18 +47,29 @@ class Ingredient{
 	//through the 'x' method.
 	mix(secondAgent)
 	{
+		if(this.name == secondAgent.name)
+		{
+			alert("Can't mix two of the same ingredients")
+		}
+		else
+		{	
 		this.effectMatcher(secondAgent.effect1);
 		this.effectMatcher(secondAgent.effect2);
 		this.effectMatcher(secondAgent.effect3);
 		this.effectMatcher(secondAgent.effect4);
-		if(this.created == true)
-		{
-			//why does this create four images?  Each effect that checks creates
-			//a new image node.  That makes no sense
+			if(this.created == true)
+			{
+				//why does this create four images?  Each effect that checks creates
+				//a new image node.  That makes no sense
 
-			//also note that oddly only inline styling works
-			$("#inventory").append("<img title = '" + this.effectsArray + "' style = 'width: 100px' src = 'https://w7.pngwing.com/pngs/820/447/png-transparent-the-elder-scrolls-v-skyrim-potion-minecraft-invisibility-elixir-minecraft-dragon-wine-bottle-magic.png' />")
-		}
+				//also note that oddly only inline styling works
+				$("#inventory").append("<img title = '" + this.effectsArray + "' style = 'width: 100px; margin: 10px;' src = 'https://w7.pngwing.com/pngs/820/447/png-transparent-the-elder-scrolls-v-skyrim-potion-minecraft-invisibility-elixir-minecraft-dragon-wine-bottle-magic.png' />")
+			}
+			else
+			{
+				alert("Potion creation failed");
+			}
+	    }
 	}
 
 
