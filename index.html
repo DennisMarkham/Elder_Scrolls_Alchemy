@@ -1,15 +1,57 @@
 <head>
-
+<link rel = "stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	
-	<select id = "ing1">		
+	<p>In the Elder Scrolls series, at least the two games I've played, alchemy is accomplished by mixing two ingredients.  Each ingredient has four effects.  When an effect in the first ingredient matches and effect in the second, regardless of order, a potion is created with said effect.  A single potion can also have multiple effects if there are multiple matches.</p>
+	<select id = "ingA" onChange = "pickIng('A')">	
+	<option value = "empty"></option>	
 	</select>
 
-	<select id = "ing2">	
+	<select id = "ingB" onChange = "pickIng('B')">	
+		<option value = "empty"></option>
 	</select>
-	
+<br>
+<br>
+
+	<span class ="ingStats">
+		Ingredient A:
+		<br>
+		<br>
+		<span class = "label">Name:</span> <span id = "nameA"></span>
+		<br>
+		<br>
+		<span class = "label">Effect: </span> <span id = "effect1A"></span>
+		<br>
+		<span class = "label">Effect: </span> <span id = "effect2A"></span>
+		<br>
+		<span class = "label">Effect: </span> <span id = "effect3A"></span>
+		<br>
+		<span class = "label">Effect: </span><span id = "effect4A"></span>
+	</span>
+
+	<span class = "ingStats">
+		Ingredient B:
+		<br>
+		<br>
+		<span class = "label">Name: </span><span id = "nameB"></span>
+		<br>
+		<br>
+		<span class = "label">Effect: </span><span id = "effect1B"></span>
+		<br>
+		<span class = "label">Effect: </span><span id = "effect2B"></span>
+		<br>
+		<span class = "label">Effect: </span><span id = "effect3B"></span>
+		<br>
+		<span class = "label">Effect: </span><span id = "effect4B"></span>
+	</span>
+
+<br>
+<br>
 <button onClick = "mix()">Mix</button>
+<br />
+	<br />
+
+	<span id = "inventory"></span>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src = "alchemy.js"></script>
 </body>

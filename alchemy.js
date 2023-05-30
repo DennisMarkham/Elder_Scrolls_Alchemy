@@ -1,4 +1,37 @@
 
+
+function pickIng(letter)
+{
+
+
+console.log("pickIng firing");
+
+//this bit fixes the bug where going back to no a blank for an ingredient menu did not
+//produce a blank tile
+if(ingArray[$("#ing" + letter).val()] == undefined)
+{
+	$("#name" + letter).empty();
+	$("#effect1" + letter).empty();
+	$("#effect2" + letter).empty();
+	$("#effect3" + letter).empty();
+	$("#effect4" + letter).empty();
+}
+
+
+//this line may make your brain hurt.  But it means, for instance,
+//the nameA field will be filled.  The program then fetches an item from 
+//the array of objects called ingArray because the value of each item in 
+//the drop down corresponds with the index in the array of objects.
+//then once its got its the proper object, it looks for its name property
+$("#name" + letter).text(ingArray[$("#ing" + letter).val()].name);
+
+$("#effect1" + letter).text(ingArray[$("#ing" + letter).val()].effect1);
+$("#effect2" + letter).text(ingArray[$("#ing" + letter).val()].effect2);
+$("#effect3" + letter).text(ingArray[$("#ing" + letter).val()].effect3);
+$("#effect4" + letter).text(ingArray[$("#ing" + letter).val()].effect4);
+}
+
+
 class Ingredient{
 	
 	//assign effects to item
@@ -63,7 +96,7 @@ class Ingredient{
 				//a new image node.  That makes no sense
 
 				//also note that oddly only inline styling works
-				$("#inventory").append("<img title = '" + this.effectsArray + "' style = 'width: 100px; margin: 10px;' src = 'https://w7.pngwing.com/pngs/820/447/png-transparent-the-elder-scrolls-v-skyrim-potion-minecraft-invisibility-elixir-minecraft-dragon-wine-bottle-magic.png' />")
+				$("#inventory").append("<img title = '" + this.effectsArray + "' style = 'width: 100px; margin: 10px;' src = 'potion.png' />")
 			}
 			else
 			{
@@ -91,13 +124,20 @@ for (let i = 0; i < ingArray.length; i++) {
 	console.log("for loop firing");
     console.log(ingArray[i]);
    
-  $("#ing1").append("<option value = '" + i + "'>" + ingArray[i].name + "</option>")
-  $("#ing2").append("<option value = '" + i + "'>" + ingArray[i].name + "</option>")
+  $("#ingA").append("<option value = '" + i + "'>" + ingArray[i].name + "</option>")
+  $("#ingB").append("<option value = '" + i + "'>" + ingArray[i].name + "</option>")
 }
 
 
 
 function mix()
 {
-ingArray[parseInt(document.getElementById("ing1").value)].mix(ingArray[parseInt(document.getElementById("ing2").value)])
+if(document.getElementById("ingA").value == "empty" || document.getElementById("ingB").value == "empty")
+{
+alert("Must mix two ingredients!")
+}
+else
+{
+ingArray[parseInt(document.getElementById("ingA").value)].mix(ingArray[parseInt(document.getElementById("ingB").value)])
+}
 }
