@@ -1,30 +1,5 @@
 <head>
-<style>
-
-	img
-	{
-		width: 100px;
-	}
-
-	.ingStats
-	{
-		/* Setting fixed widths not workin, wtf*/
-		width: 125px;
-		border-style: solid;
-		display: inline-block;
-
-		/* can't achieve 0 margin wtf */
-		margin-left: 0px;
-		margin-right: 0px;
-		padding: 10px;
-	}
-
-    select
-    {
-    	width: 125px;
-   
-    }
-</style>
+<link rel = "stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<p>In the Elder Scrolls series, at least the two games I've played, alchemy is accomplished by mixing two ingredients.  Each ingredient has four effects.  When an effect in the first ingredient matches and effect in the second, regardless of order, a potion is created with said effect.  A single potion can also have multiple effects if there are multiple matches.</p>
@@ -42,32 +17,32 @@
 		Ingredient A:
 		<br>
 		<br>
-		Name: <span id = "nameA"></span>
+		<span class = "label">Name:</span> <span id = "nameA"></span>
 		<br>
 		<br>
-		Effect: <span id = "effect1A"></span>
+		<span class = "label">Effect: </span> <span id = "effect1A"></span>
 		<br>
-		Effect: <span id = "effect2A"></span>
+		<span class = "label">Effect: </span> <span id = "effect2A"></span>
 		<br>
-		Effect: <span id = "effect3A"></span>
+		<span class = "label">Effect: </span> <span id = "effect3A"></span>
 		<br>
-		Effect: <span id = "effect4A"></span>
+		<span class = "label">Effect: </span><span id = "effect4A"></span>
 	</span>
 
 	<span class = "ingStats">
 		Ingredient B:
 		<br>
 		<br>
-		Name: <span id = "nameB"></span>
+		<span class = "label">Name: </span><span id = "nameB"></span>
 		<br>
 		<br>
-		Effect: <span id = "effect1B"></span>
+		<span class = "label">Effect: </span><span id = "effect1B"></span>
 		<br>
-		Effect: <span id = "effect2B"></span>
+		<span class = "label">Effect: </span><span id = "effect2B"></span>
 		<br>
-		Effect: <span id = "effect3B"></span>
+		<span class = "label">Effect: </span><span id = "effect3B"></span>
 		<br>
-		Effect: <span id = "effect4B"></span>
+		<span class = "label">Effect: </span><span id = "effect4B"></span>
 	</span>
 
 <br>

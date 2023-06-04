@@ -1,14 +1,28 @@
+
+
 function pickIng(letter)
 {
 
 
 console.log("pickIng firing");
+
+//this bit fixes the bug where going back to no a blank for an ingredient menu did not
+//produce a blank tile
+if(ingArray[$("#ing" + letter).val()] == undefined)
+{
+	$("#name" + letter).empty();
+	$("#effect1" + letter).empty();
+	$("#effect2" + letter).empty();
+	$("#effect3" + letter).empty();
+	$("#effect4" + letter).empty();
+}
+
+
 //this line may make your brain hurt.  But it means, for instance,
 //the nameA field will be filled.  The program then fetches an item from 
 //the array of objects called ingArray because the value of each item in 
 //the drop down corresponds with the index in the array of objects.
 //then once its got its the proper object, it looks for its name property
-
 $("#name" + letter).text(ingArray[$("#ing" + letter).val()].name);
 
 $("#effect1" + letter).text(ingArray[$("#ing" + letter).val()].effect1);
@@ -82,7 +96,7 @@ class Ingredient{
 				//a new image node.  That makes no sense
 
 				//also note that oddly only inline styling works
-				$("#inventory").append("<img title = '" + this.effectsArray + "' style = 'width: 100px; margin: 10px;' src = 'https://w7.pngwing.com/pngs/820/447/png-transparent-the-elder-scrolls-v-skyrim-potion-minecraft-invisibility-elixir-minecraft-dragon-wine-bottle-magic.png' />")
+				$("#inventory").append("<img title = '" + this.effectsArray + "' style = 'width: 100px; margin: 10px;' src = 'potion.png' />")
 			}
 			else
 			{
