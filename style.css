@@ -11,18 +11,16 @@
 
 	.ingStats
 	{
-		/* Setting fixed widths not workin, wtf*/
+		
 		width: 125px;
 		border-style: solid;
 		display: inline-block;
-
-		/* can't achieve 0 margin wtf */
 		margin-left: 0px;
 		margin-right: 0px;
 		padding: 10px;
 
 		/*this doesn't fix the relative height issue */
-		min-height: 200px;
+		height: 250px;
 
 	}
 
@@ -41,4 +39,9 @@
     p
     {
     	max-width: 500px;
+    }
+
+    .flex-container
+    {
+    	 display: flex;
     }
