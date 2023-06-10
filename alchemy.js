@@ -97,6 +97,10 @@ class Ingredient{
 
 				//also note that oddly only inline styling works
 				$("#inventory").append("<img title = '" + this.effectsArray + "' style = 'width: 100px; margin: 10px;' src = 'potion.png' />")
+				
+				//this removes the "compounding title" effect
+				this.effectsArray = [];
+				
 			}
 			else
 			{
